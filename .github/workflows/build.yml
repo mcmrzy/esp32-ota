@@ -19,7 +19,7 @@ jobs:
             target: Windows
             build_target: windows
             artifact_path: build/windows/x64/runner/Release/*
-          - os: ubuntu-latest
+          - os: ubuntu-20.04
             target: Linux
             build_target: linux
             artifact_path: build/linux/x64/release/bundle/*
