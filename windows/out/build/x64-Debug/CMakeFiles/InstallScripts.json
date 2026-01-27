@@ -1,0 +1,12 @@
+{
+	"InstallScripts" : 
+	[
+		"C:/Users/sksbx0011/Documents/PlatformIO/Projects/esp32/tools/ota_uploader_app/windows/out/build/x64-Debug/cmake_install.cmake",
+		"C:/Users/sksbx0011/Documents/PlatformIO/Projects/esp32/tools/ota_uploader_app/windows/out/build/x64-Debug/flutter/cmake_install.cmake",
+		"C:/Users/sksbx0011/Documents/PlatformIO/Projects/esp32/tools/ota_uploader_app/windows/out/build/x64-Debug/runner/cmake_install.cmake",
+		"C:/Users/sksbx0011/Documents/PlatformIO/Projects/esp32/tools/ota_uploader_app/windows/out/build/x64-Debug/plugins/desktop_drop/cmake_install.cmake",
+		"C:/Users/sksbx0011/Documents/PlatformIO/Projects/esp32/tools/ota_uploader_app/windows/out/build/x64-Debug/plugins/flutter_libserialport/cmake_install.cmake",
+		"C:/Users/sksbx0011/Documents/PlatformIO/Projects/esp32/tools/ota_uploader_app/windows/out/build/x64-Debug/plugins/flutter_libserialport/libserialport/cmake_install.cmake"
+	],
+	"Parallel" : false
+}

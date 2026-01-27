@@ -1,0 +1,14 @@
+# ninja log v6
+21	21133	7911834948974697	C:/Users/sksbx0011/Documents/PlatformIO/Projects/esp32/tools/ota_uploader_app/windows/flutter/ephemeral/flutter_windows.dll	128e3c9f81a07682
+21	21133	7911834948974697	C:/Users/sksbx0011/Documents/PlatformIO/Projects/esp32/tools/ota_uploader_app/windows/flutter/ephemeral/flutter_export.h	128e3c9f81a07682
+21	21133	7911834948974697	C:/Users/sksbx0011/Documents/PlatformIO/Projects/esp32/tools/ota_uploader_app/windows/flutter/ephemeral/flutter_windows.h	128e3c9f81a07682
+21	21133	7911834948974697	C:/Users/sksbx0011/Documents/PlatformIO/Projects/esp32/tools/ota_uploader_app/windows/flutter/ephemeral/flutter_messenger.h	128e3c9f81a07682
+21	21133	7911834948974697	C:/Users/sksbx0011/Documents/PlatformIO/Projects/esp32/tools/ota_uploader_app/windows/flutter/ephemeral/flutter_plugin_registrar.h	128e3c9f81a07682
+21	21133	7911834948974697	C:/Users/sksbx0011/Documents/PlatformIO/Projects/esp32/tools/ota_uploader_app/windows/flutter/ephemeral/flutter_texture_registrar.h	128e3c9f81a07682
+21	21133	7911834948974697	C:/Users/sksbx0011/Documents/PlatformIO/Projects/esp32/tools/ota_uploader_app/windows/flutter/ephemeral/cpp_client_wrapper/core_implementations.cc	128e3c9f81a07682
+21	21133	7911834948974697	C:/Users/sksbx0011/Documents/PlatformIO/Projects/esp32/tools/ota_uploader_app/windows/flutter/ephemeral/cpp_client_wrapper/standard_codec.cc	128e3c9f81a07682
+21	21133	7911834948974697	C:/Users/sksbx0011/Documents/PlatformIO/Projects/esp32/tools/ota_uploader_app/windows/flutter/ephemeral/cpp_client_wrapper/plugin_registrar.cc	128e3c9f81a07682
+21	21133	7911834948974697	C:/Users/sksbx0011/Documents/PlatformIO/Projects/esp32/tools/ota_uploader_app/windows/flutter/ephemeral/cpp_client_wrapper/flutter_engine.cc	128e3c9f81a07682
+21	21133	7911834948974697	C:/Users/sksbx0011/Documents/PlatformIO/Projects/esp32/tools/ota_uploader_app/windows/flutter/ephemeral/cpp_client_wrapper/flutter_view_controller.cc	128e3c9f81a07682
+21	21133	7911834948974697	flutter/_phony_	128e3c9f81a07682
+21	21133	7911834948974697	C:/Users/sksbx0011/Documents/PlatformIO/Projects/esp32/tools/ota_uploader_app/windows/out/build/x64-Debug/flutter/_phony_	128e3c9f81a07682
