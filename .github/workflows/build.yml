@@ -8,52 +8,62 @@ on:
   workflow_dispatch:
 
 jobs:
-  build:
-    name: Build ${{ matrix.target }}
-    runs-on: ${{ matrix.os }}
-    strategy:
-      fail-fast: false
-      matrix:
-        include:
-          - os: windows-latest
-            target: Windows
-            build_target: windows
-            artifact_path: build/windows/x64/runner/Release/*
-          - os: ubuntu-20.04
-            target: Linux
-            build_target: linux
-            artifact_path: build/linux/x64/release/bundle/*
-
+  build-windows:
+    name: Build Windows
+    runs-on: windows-latest
     steps:
       - uses: actions/checkout@v4
-
-      - name: Install dependencies (Linux)
-        if: matrix.target == 'Linux'
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y clang cmake ninja-build pkg-config libgtk-3-dev libserialport-dev
-
-      - name: Setup Flutter
-        uses: subosito/flutter-action@v2
+      
+      - uses: subosito/flutter-action@v2
         with:
           channel: 'stable'
-
-      - name: Enable Linux Desktop
-        if: matrix.target == 'Linux'
-        run: flutter config --enable-linux-desktop
-
+          
       - name: Install dependencies
         run: flutter pub get
-
-      - name: Create Linux directory
-        if: matrix.target == 'Linux'
-        run: flutter create --platforms=linux .
-
-      - name: Build Application
-        run: flutter build ${{ matrix.build_target }} --release
-
-      - name: Upload Artifacts
-        uses: actions/upload-artifact@v4
+        
+      - name: Build Windows
+        run: flutter build windows --release
+        
+      - uses: actions/upload-artifact@v4
         with:
-          name: esp32-ota-uploader-${{ matrix.target }}
-          path: ${{ matrix.artifact_path }}
+          name: esp32-ota-uploader-Windows
+          path: build/windows/x64/runner/Release/*
+
+  build-linux:
+    name: Build Linux
+    runs-on: ubuntu-latest
+    container:
+      image: ubuntu:20.04
+    steps:
+      - name: Install System Dependencies
+        run: |
+          apt-get update
+          DEBIAN_FRONTEND=noninteractive apt-get install -y git curl unzip clang cmake ninja-build pkg-config libgtk-3-dev liblzma-dev xz-utils
+      
+      - uses: actions/checkout@v4
+        with:
+          safe-directory-check: false
+
+      - name: Fix Git Trust
+        run: git config --global --add safe.directory '*'
+
+      - uses: subosito/flutter-action@v2
+        with:
+          channel: 'stable'
+          
+      - name: Enable Linux Desktop
+        run: flutter config --enable-linux-desktop
+
+      - name: Install Flutter Dependencies
+        run: flutter pub get
+        
+      - name: Create Linux directory (if missing)
+        run: flutter create --platforms=linux . || true
+
+      - name: Build Linux
+        run: flutter build linux --release
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: esp32-ota-uploader-Linux
+          path: build/linux/x64/release/bundle/*
