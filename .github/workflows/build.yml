@@ -38,7 +38,7 @@ jobs:
       - name: Install System Dependencies
         run: |
           apt-get update
-          DEBIAN_FRONTEND=noninteractive apt-get install -y git curl unzip clang cmake ninja-build pkg-config libgtk-3-dev liblzma-dev xz-utils
+          DEBIAN_FRONTEND=noninteractive apt-get install -y git curl unzip clang cmake ninja-build pkg-config libgtk-3-dev liblzma-dev xz-utils jq
       
       - uses: actions/checkout@v4
         with:
