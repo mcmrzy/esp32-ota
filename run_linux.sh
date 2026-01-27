@@ -1,8 +1,7 @@
 #!/bin/bash
 # 自动配置 OpenGL 环境变量以解决 WSL/VM 下的渲染问题
-export MESA_GL_VERSION_OVERRIDE=3.3
-export MESA_GLSL_VERSION_OVERRIDE=330
-export LIBGL_ALWAYS_INDIRECT=1
+export LIBGL_ALWAYS_SOFTWARE=1
+export GALLIUM_DRIVER=llvmpipe
 
 # 获取脚本所在目录
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
