@@ -14,6 +14,11 @@ struct _MyApplication {
 
 G_DEFINE_TYPE(MyApplication, my_application, GTK_TYPE_APPLICATION)
 
+// Called when first Flutter frame received.
+static void first_frame_cb(MyApplication* self, FlView* view) {
+  gtk_widget_show(gtk_widget_get_toplevel(GTK_WIDGET(view)));
+}
+
 // Implements GApplication::activate.
 static void my_application_activate(GApplication* application) {
   MyApplication* self = MY_APPLICATION(application);
@@ -61,10 +66,9 @@ static void my_application_activate(GApplication* application) {
 
   // Show the window when Flutter renders.
   // Requires the view to be realized so we can start rendering.
-  g_signal_connect_swapped(view, "first-frame", G_CALLBACK(first_frame_cb),
-                           self);
+  // g_signal_connect_swapped(view, "first-frame", G_CALLBACK(first_frame_cb),
+  //                          self);
   gtk_widget_realize(GTK_WIDGET(view));
-  // Force show window immediately in case first-frame signal is delayed or lost in VM
   gtk_widget_show(GTK_WIDGET(window));
 
   fl_register_plugins(FL_PLUGIN_REGISTRY(view));
