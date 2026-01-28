@@ -1,12 +1,19 @@
 #!/bin/bash
 # 自动配置 OpenGL 环境变量以解决 WSL/VM 下的渲染问题
+
+# 尝试不同的软件渲染器 (softpipe 有时比 llvmpipe 更稳定)
 export LIBGL_ALWAYS_SOFTWARE=1
-export GALLIUM_DRIVER=llvmpipe
-export MESA_GL_VERSION_OVERRIDE=3.3
-export MESA_GLSL_VERSION_OVERRIDE=330
-export EGL_PLATFORM=x11
+export GALLIUM_DRIVER=softpipe 
+
+# 强制使用 X11 后端 (Flutter 默认可能会尝试 Wayland)
 export GDK_BACKEND=x11
-export GTK_DEBUG=interactive
+export EGL_PLATFORM=x11
+
+# 禁用硬件加速合成
+export FLUTTER_DRM_DEVICE=/dev/null
+
+# 调试输出
+echo "Launching esp32_ota_tool with software rendering (softpipe)..."
 
 # 获取脚本所在目录
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"

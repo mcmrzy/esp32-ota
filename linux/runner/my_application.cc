@@ -70,6 +70,9 @@ static void my_application_activate(GApplication* application) {
   
   // Use show_all to ensure the window and all children are visible immediately
   gtk_widget_show_all(GTK_WIDGET(window));
+  
+  // Force window to be presented (raised and focused)
+  gtk_window_present(window);
 
   fl_register_plugins(FL_PLUGIN_REGISTRY(view));
 
