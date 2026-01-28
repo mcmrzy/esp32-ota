@@ -66,10 +66,10 @@ static void my_application_activate(GApplication* application) {
 
   // Show the window when Flutter renders.
   // Requires the view to be realized so we can start rendering.
-  // g_signal_connect_swapped(view, "first-frame", G_CALLBACK(first_frame_cb),
-  //                          self);
   gtk_widget_realize(GTK_WIDGET(view));
-  gtk_widget_show(GTK_WIDGET(window));
+  
+  // Use show_all to ensure the window and all children are visible immediately
+  gtk_widget_show_all(GTK_WIDGET(window));
 
   fl_register_plugins(FL_PLUGIN_REGISTRY(view));
 

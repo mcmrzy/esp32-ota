@@ -5,6 +5,8 @@ export GALLIUM_DRIVER=llvmpipe
 export MESA_GL_VERSION_OVERRIDE=3.3
 export MESA_GLSL_VERSION_OVERRIDE=330
 export EGL_PLATFORM=x11
+export GDK_BACKEND=x11
+export GTK_DEBUG=interactive
 
 # 获取脚本所在目录
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
